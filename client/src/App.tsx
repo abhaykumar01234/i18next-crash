@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+
+const lngs = {
+  en: { nativeName: "English" },
+  fr: { nativeName: "French" },
+  de: { nativeName: "German" },
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { t, i18n } = useTranslation();
+  const code = "404";
   return (
     <>
+      <h1>{t("HELLO")} World</h1>
+      <Link to="/login">Login</Link>
+      <br />
+      <div className="inline">
+        {Object.entries(lngs).map(([value, { nativeName }]) => (
+          <label key={value}>
+            <input
+              type="radio"
+              name="language"
+              value={value}
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+            />
+            &nbsp; {nativeName}
+          </label>
+        ))}
+      </div>
+      <div>{t("HELLO")}</div>
+      <div>{t("HELLO", { lng: "fr" })}</div>
+      <div>{t("RESOURCES_MARKETING-TOOLS_CARDS.1.HEADING")}</div>
+      <div>{t("name_label", { ns: "common" })}</div>
+      <div>{t("common:name_label")}</div>
+      <div>{t("SAVE")}</div>
+      <div>{t([`error.${code}`, "error.unknown"])}</div>
+
+      <div>{t("message", { what: "React", how: "awesome" })}</div>
+      <div>{t("rowsAffected", { count: 10 })}</div>
+      <div>{t("row", { count: 2 })}</div>
+
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {t("message", {
+          what: "React",
+          how: "<i>awesome</i>",
+          // interpolation: { escapeValue: false },
+        })}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div>{t("cost", { cost: 12000.3456, when: "today" })}</div>
+      <div>{t("amount", { amount: 1205600.3456 })}</div>
+      <div>
+        {t("registerDate", {
+          registerDate: new Date("03/06/1993"),
+          formatParams: {
+            registerDate: {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            },
+          },
+        })}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

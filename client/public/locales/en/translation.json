@@ -1,0 +1,36 @@
+{
+  "HELLO": "Hello World",
+  "level1": {
+    "level2Key1": "Key 1",
+    "level2Key2": "Key 2"
+  },
+  "name_label": "Name Label",
+  "RESOURCES_MARKETING-TOOLS_CARDS": [
+    {
+      "IMAGE": "https://cdn0.capterra-static.com/assets/images/marketing-tools/new_bid_calc.webp",
+      "HEADING": "PPC Bid Calculator",
+      "PARA": "Find the maximum bid you should pay for a click in any of your ad channels, based on your specific business goals and metrics.",
+      "ACTION": "Get Started",
+      "LINK": "https://digital-markets.gartner.com/ppc-calculator"
+    },
+    {
+      "IMAGE": "https://cdn0.capterra-static.com/assets/images/marketing-tools/new_optimize_lp.webp",
+      "HEADING": "Landing Page Optimization",
+      "PARA": "A landing page is a standalone website dedicated to converting traffic to leads for a specific marketing campaign. Follow these 6 steps to increase your conversion rates and get more leads.",
+      "ACTION": "Get the Tips",
+      "LINK": "https://www.gartner.com/ngw/globalassets/en/digital-markets/documents/landing-page-infographic.pdf"
+    }
+  ],
+  "error": {
+    "404": "Not Found!",
+    "unknown": "Something went wrong! Please try later"
+  },
+  "message": "{{what}} is {{- how}}",
+  "row_one": "row",
+  "row_other": "rows",
+  "rowsAffected": "{{count}} $t(row, {\"count\": {{count}}}) affected",
+  "rowsAffected_zero": "No $t(row_other) affected",
+  "cost": "The cost is {{cost, number(maximumFractionDigits: 2)}} {{when, uppercase}}",
+  "amount": "The total amount is {{amount, currency(INR)}}",
+  "registerDate": "The registered date is {{registerDate, datetime}}"
+}

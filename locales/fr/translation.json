@@ -1,0 +1,8 @@
+{
+  "HELLO": "Hola Amigos!",
+  "level1": {
+    "level2Key1": "Keye 1",
+    "level2Key2": "Keye 2"
+  },
+  "LOGIN_PAGE_TITLE": "Hola to the login page"
+}
