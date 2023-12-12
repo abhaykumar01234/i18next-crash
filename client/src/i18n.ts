@@ -11,7 +11,7 @@ i18next
     lng: "en",
     fallbackLng: "en",
     backend: {
-      loadPath: `http://localhost:3001/locales/{{lng}}/{{ns}}.json`,
+      loadPath: `/locales/{{lng}}/{{ns}}.json`,
     },
     // resources: {
     //   en: {
